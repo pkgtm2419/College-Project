@@ -1,0 +1,28 @@
+
+   tinymce_templates_howto.txt
+   
+   This modification allows custom pre made templates to be used in your tinymce editor
+   
+   Unzip the package on your local comp, file structure should be as follows:
+   
+   -- tinymce_modx_templates
+       * tinymce_templates_howto.txt
+
+     the following folder structure matches the tinymce3101 in the plugins folder
+
+     tinymce3101
+        - tinymce.functions.php (modified and commented, so back up your original in case)
+        * lists/      + files
+        * templates/  + files
+        * plugins/template/ (this folder may already be in there, I added it just in case)
+   
+
+  Upload the files in the tinymce3101 folder to your server keeping the same folder structure
+  
+  The following additions are only needed if you use the editor in custom mode
+  Go into your manager/configuration/interface and features/
+   at the end of the custom plugins field, add     ,template
+   at the end of the buttons2 line add             ,template
+   
+  To add new templates, create your new template and save it in the templates/ folder.
+  Modify the lists/template_list.js file so your new template is listed.

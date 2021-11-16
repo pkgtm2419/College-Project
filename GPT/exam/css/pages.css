@@ -1,0 +1,11 @@
+﻿/*  Style Sheet Created By Shashwat Pandey */
+.leftHeading{font-size:20px;font-family:OpenSansLight;text-align:center;padding-top:15px;width: 360px;}
+.rightHeading{font-size:20px;font-family:OpenSansLight;text-align:center;padding-top:15px;}
+.leftPanel{float: left;min-height: 449px;width: 463px;}
+.disp-msg{font-family:Tahoma;font-weight:bold;padding: 0 0 0 20px;}
+.red-msg{text-align:center;background: url("../images/message_red.gif") top left no-repeat;color: #ce2700;}
+.green-msg{text-align:center;background: url("../images/message_green.gif") top left no-repeat;color: #6da827;}
+.added, .updated, .errors{display:none;}
+#captcha{border-radius: 0.7em;width: 105px;}.reloadcaptcha{height:26px;vertical-align:top;cursor:pointer;}
+.deleteTable{background-color:#e0f2cb;width:100%;height:70px;display:none;}
+.deleteTable a{text-decoration:underline;cursor:pointer;}

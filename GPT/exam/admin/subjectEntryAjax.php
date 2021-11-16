@@ -1,0 +1,1 @@
+<?php extract($_POST);include 'db_inc.php';mysql_query("Delete from subject_master where subject_id='$id'") or die ('er');echo "s";?>

@@ -1,0 +1,9 @@
+<p class="sugestionP"><img src='images/Glowing-light-bulb.png'/>Improvment tips / Suggestions.</p><?php require_once '../admin/db_inc.php';session_start();$cmarks=0;$subCutoffMarks="";$get_subject_name=mysql_query("select subject_id,(select subject_name from subject_master where subject_id=tsm.subject_id) as subject_name from test_subject_relation_master tsm where test_id=".$_GET["tid"]." order by subject_id asc");while($sname=mysql_fetch_array($get_subject_name)){$qr="select correct,marks,answer,t.negative_marks as tst_negative_marks,tsm.negative_marks as sub_negative_marks,tsm.cutoff_marks as sub_cutoff_marks from question_master q left join ";if($_GET["event"]=="true"){$qr .="event_";}$qr .="answer_master a on q.subject_id=a.subject_id and q.ques_id=a.ques_id and user_id='".$_SESSION["uid"]."' and q.test_id=a.test_id left join test_master t on q.test_id=t.test_id left join test_subject_relation_master tsm on q.test_id=tsm.test_id and q.subject_id=tsm.subject_id where q.subject_id=".$sname["subject_id"]." and q.test_id=".$_GET["tid"];
+$get_answers=mysql_query($qr);while($getans=mysql_fetch_array($get_answers)){$subCutoffMarks=$getans["sub_cutoff_marks"];
+if($getans["answer"]==$getans["correct"]){$cmarks=$cmarks+$getans["marks"];}
+else if(($getans["answer"]!=$getans["correct"])&&($getans["answer"]!=""))
+{if($getans["sub_negative_marks"]!=""){$cmarks=$cmarks-$getans["sub_negative_marks"];}
+else{$cmarks=$cmarks-$getans["tst_negative_marks"];}
+}}echo "<p>Your performance in <i>".$sname["subject_name"]."</i> is ";
+if($cmarks<=intval($subCutoffMarks)){echo "below the passing marks. You need to study hard in this subject.";}
+else{echo " ok. You still need more preparation to come up to the exam preparation level.</p>";}$cmarks=0;};?>

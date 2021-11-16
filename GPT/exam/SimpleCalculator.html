@@ -1,0 +1,241 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+.buttonClass{
+cursor:pointer;
+}
+#closeButton{
+cursor:pointer;
+}
+</style>
+<script type="text/javascript">
+var temp;
+var calcFn = false;
+function w_onload()
+{ frm.txt.value=0; }
+function addchar(input,character)
+{ 
+if(calcFn)
+input.value = character;
+else if(input.value == null || input.value == "0")
+input.value = character
+else
+input.value += character 
+calcFn = false;
+}
+function cancel_click()
+{
+frm.txt.value=0;
+}
+function sin_click(obj)
+{
+calcFn = true;
+if(obj=='sin')
+var result=frm.txt.value;
+if(document.frm.deg[0].checked)
+{
+result=result*Math.PI/180;
+frm.txt.value=Math.sin(result).toFixed(2);
+}
+if(document.frm.deg[1].checked)
+frm.txt.value=Math.sin(result).toFixed(2);
+}
+function cos_click(obj)
+{
+calcFn = true;
+if(obj=='cos')
+var result=frm.txt.value;
+if(document.frm.deg[0].checked)
+{
+result=result*Math.PI/180;
+frm.txt.value=Math.cos(result).toFixed(2);
+}
+if(document.frm.deg[1].checked)
+frm.txt.value=Math.cos(frm.txt.value);
+}
+
+function tan_click(obj)
+{
+calcFn = true;
+if(obj=='tan')
+var result=frm.txt.value;
+var intRegex = /^(\+|-)?\d+$/; 
+if(document.frm.deg[0].checked)
+{
+var degCheck = result/90;
+if(intRegex.test(degCheck)){
+if((degCheck%2)!=0){
+frm.txt.value='Infinity';
+}else{
+frm.txt.value='0.00';
+}
+}else{
+result=result*Math.PI/180;
+frm.txt.value=Math.tan(result).toFixed(2);
+}
+}
+else if(document.frm.deg[1].checked){
+var radCheck = 2*result/Math.PI;
+if(intRegex.test(degCheck)){
+if((degCheck%2)!=0){
+frm.txt.value='Infinity';
+}else{
+frm.txt.value='0.00';
+}
+}else{
+frm.txt.value=Math.tan(frm.txt.value);
+}
+}
+}
+
+
+function resi_click()
+{
+calcFn = true;
+temp= frm.txt.value;
+frm.txt.value=1/temp;
+}
+function log_click()
+{
+calcFn = true;
+frm.txt.value=Math.log(frm.txt.value)/Math.LN10;
+}
+function sqr_click()
+{
+calcFn = true;
+temp=frm.txt.value;
+frm.txt.value=temp*temp;
+}
+function sqrt_click()
+{
+calcFn = true;
+frm.txt.value=Math.sqrt(frm.txt.value);
+}
+function equal_click()
+{
+calcFn = true;
+frm.txt.value=eval(frm.txt.value);
+}
+function exp_click()
+{
+calcFn = true;
+frm.txt.value=Math.exp(frm.txt.value);
+}
+function fac_click()
+{
+calcFn = true;
+var f=1;
+var i;
+var n=parseInt(frm.txt.value);
+for(i=1;i<=n;i++)
+{
+f=f*i;
+}
+frm.txt.value=f;
+}
+function bks_click()
+{
+var s;
+s=frm.txt.value;
+if(s.length>=1)
+{
+var b=s.substr(0,s.length-1);
+frm.txt.value=b;
+}
+}
+function sign_click()
+{
+if(isNaN(frm.txt.value)==false)
+{
+if(frm.txt.value>0)
+{ 
+frm.txt.value=frm.txt.value*-1
+}
+else if(frm.txt.value<0)
+{ 
+frm.txt.value=frm.txt.value.replace('-','')
+}
+}
+}
+function ln_click()
+{
+calcFn = true;
+frm.txt.value=Math.log(frm.txt.value);
+}
+function lb_click()
+{
+calcFn = true;
+frm.txt.value=Math.log(frm.txt.value)/Math.LN2;
+}
+function hideCalculator(){
+	document.getElementById("loadCalc").style.display = 'none';
+}
+</script> 
+</head><body onLoad="w_onload()">
+<form name="frm" action="">
+<div id="calculatorOption" style="height:30%;float:left;">
+<table style="border:solid green 1px;height:99%;background-color:white">
+<tbody><tr>
+<td>
+<input value="0" maxlength="10" name="txt" size="25" type="text"><br>
+</td>
+</tr>
+<tr>
+<td>
+<font size="1.5px"><input name="deg" value="Degree" checked="checked" type="radio">Degrees
+<input name="deg" value="Radian" type="radio">Radians
+</font></td></tr>
+<tr>
+<td>
+<input class="buttonClass" name="sqr" value="sqr" style="width:27px;height:29px" onClick="sqr_click()" type="button">
+<input class="buttonClass" name="sqt" value="sqt" style="width:27px;height:29px" onClick="sqrt_click()" type="button">
+<input class="buttonClass" name="exp" value="exp" style="width:27px;height:29px" onClick="exp_click()" type="button">
+<input class="buttonClass" name="fac" value="x!" style="width:27px;height:29px" onClick="fac_click()" type="button">
+<input class="buttonClass" name="bks" value="bks" style="width:27px;height:29px" onClick="bks_click()" type="button">
+<input class="buttonClass" name="cancel" value="clr" style="width:27px;height:29px" onClick="cancel_click()" type="button">
+</td></tr>
+<tr>
+<td>
+<input class="buttonClass" name="one" value="1" style="width:27px;height:29px" onClick="addchar(this.form.txt,'1')" type="button">
+<input class="buttonClass" name="two" value="2" style="width:27px;height:29px" onClick="addchar(this.form.txt,'2')" type="button">
+<input class="buttonClass" name="three" value="3" style="width:27px;height:29px" onClick="addchar(this.form.txt,'3')" type="button">
+<input class="buttonClass" name="add" value="+" style="width:27px;height:29px" onClick="addchar(this.form.txt,'+')" type="button">
+<input class="buttonClass" name="sin" value="sin" style="width:27px;height:29px" onClick="sin_click('sin')" type="button">
+<input class="buttonClass" name="log" value="log" style="width:27px;height:29px" onClick="log_click()" type="button">
+</td></tr>
+<tr>
+<td>
+<input class="buttonClass" name="four" value="4" style="width:27px;height:29px" onClick="addchar(this.form.txt,'4')" type="button">
+<input class="buttonClass" name="five" value="5" style="width:27px;height:29px" onClick="addchar(this.form.txt,'5')" type="button">
+<input class="buttonClass" name="six" value="6" style="width:27px;height:29px" onClick="addchar(this.form.txt,'6')" type="button">
+<input class="buttonClass" name="sub" value="-" style="width:27px;height:29px" onClick="addchar(this.form.txt,'-')" type="button">
+<input class="buttonClass" name="cos" value="cos" style="width:27px;height:29px" onClick="cos_click('cos')" type="button">
+<input class="buttonClass" name="ln" value="ln" style="width:27px;height:29px" onClick="ln_click()" type="button">
+</td></tr>
+<tr>
+<td>
+<input class="buttonClass" name="seven" value="7" style="width:27px;height:29px" onClick="addchar(this.form.txt,'7')" type="button">
+<input class="buttonClass" name="eight" value="8" style="width:27px;height:29px" onClick="addchar(this.form.txt,'8')" type="button">
+<input class="buttonClass" name="nine" value="9" style="width:27px;height:29px" onClick="addchar(this.form.txt,'9')" type="button">
+<input class="buttonClass" name="mul" value="*" style="width:27px;height:29px" onClick="addchar(this.form.txt,'*')" type="button">
+<input class="buttonClass" name="tan" value="tan" style="width:27px;height:29px" onClick="tan_click('tan')" type="button">
+<input class="buttonClass" name="lb" value="lb" style="width:27px;height:29px" onClick="lb_click()" type="button">
+</td></tr>
+<tr>
+<td>
+<input class="buttonClass" name="zero" value="0" style="width:27px;height:29px" onClick="addchar(this.form.txt,'0')" type="button">
+<input class="buttonClass" name="dot" value="." style="width:27px;height:29px" onClick="addchar(this.form.txt,'.')" type="button">
+<input class="buttonClass" name="equal" value="=" style="width:27px;height:29px" onClick="equal_click()" type="button">
+<input class="buttonClass" name="div" value="/" style="width:27px;height:29px" onClick="addchar(this.form.txt,'/')" type="button">
+<input class="buttonClass" name="sign" value="+/-" style="width:27px;height:29px" onClick="sign_click()" type="button">
+<input class="buttonClass" name="resi" value="1/x" style="width:27px;height:29px" onClick="resi_click()" type="button">
+</td></tr>
+<tr>
+<td>
+	<center>
+	<input id="closeButton" name="closeButton" value="Close" type="button">
+	</center>
+</td>
+</tr>
+</tbody></table>
+</div>
+</form></body></html>

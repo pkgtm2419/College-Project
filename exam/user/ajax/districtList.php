@@ -1,0 +1,1 @@
+<?php require_once '../admin/db_inc.php';$getD=mysql_query("SELECT district_name FROM state_district_list WHERE state='".$_GET["state"]."'");while($row=mysql_fetch_array($getD)){echo "<option value='".$row["district_name"]."'>".$row["district_name"]."</option>";}?>

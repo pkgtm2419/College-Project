@@ -1,0 +1,71 @@
+/*  Style Sheet Created By Shashwat Pandey */
+html, body, div, span,  h1, h2, h3, h4, h5, h6, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-size:11px;}
+a img{border:none;}
+input::-ms-clear{display:none!important;height:0px;width:0px;}
+input::-ms-reveal{display:none!important;height:0px;width:0px;}
+body{font-family:Verdana, Arial, Helvetica, sans-serif;color:#262626;background:url("../images/bg_body.gif") repeat-x scroll left top #FFFFFF;font-size:12px;}
+.header{background:url("../images/bkg-header-top-fade.png") repeat-x 0 0;color:#FFF;width:900px;margin:0 auto;}
+.header-pri{background:url("../images/bkg-header-highlights.png") no-repeat 0 bottom;}
+.menu{width:900px;margin:0 auto;}
+.contain-24{width:900px;padding:0;margin:0 auto;}
+.contain-25{width:980px;margin:0 auto;}
+.clear:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clear {display:block;}
+.clearall{clear:both;}
+.site-logo{background-image:url("../images/header.png"); width:901px; height:130px;}
+.body-content{border-radius: 0 0 0.7em 0.7em;margin: -1px auto 0;width:900px;background-color:#F4F4F4;}
+.menu {width:1000px;padding:0;margin:0 auto;}
+.right-panel{border-left:1px solid silver;min-height:100%;width:630px;float:right;}
+.login-box{background:none repeat scroll 0 0 #F4F4F4;width:227px;float:left;padding:20px;margin-top:90px;}
+.login-heading{color:#1D61A4; padding:5px;font-family:Trebuchet MS;font-weight:bold;font-size:14px;}
+.login-p{margin:0 0 10px;}
+.text-box-login{border:1px solid #AAADB2;height:26px;width:227px; padding-left:7px;font-size:12px;font-family:Trebuchet MS;}
+.text-box-login-error{border:1px solid red;height:26px;width:227px; padding-left:7px;font-size:12px;font-family:Trebuchet MS;}
+.select-box-login{color:rgb(102, 102, 102);cursor: pointer;height:30px;padding:5px; border:1px solid #AAADB2;width:235px;font-size:12px;font-family:Trebuchet MS;}
+.select-box-login-error{color:rgb(102, 102, 102);cursor: pointer;height:30px;padding:5px;border:1px solid red;width:235px;font-size:12px;font-family:Trebuchet MS;}
+.login-remember{font-family:Trebuchet MS;font-size:11px;}
+.submit-button{background:none repeat scroll 0 0 #3B5998;color:#FFFFFF;border:0 none;padding:4px 12px;clear:both;cursor:pointer;font-weight:bold;box-shadow: 3px 2px 3px #768BB7;}
+.submit-button:active{box-shadow: -1px 0px 0px #768BB7;}
+.reset-button{background:none repeat scroll 0 0 gray;color:#FFFFFF;border:0 none;padding:4px 12px;clear:both;cursor:pointer;font-weight:bold;box-shadow: 3px 2px 3px gray;}
+.reset-button:active{box-shadow: -1px 0px 0px gray;}
+.button-allow{background:none repeat scroll 0 0 #1D61A4;color:#FFFFFF;border:0 none;padding:3px 12px;clear:both;cursor:pointer;font-weight:bold;font-size:12px;}
+.button-disallow{background:none repeat scroll 0 0 red;color:#FFFFFF;border:0 none;padding:3px 12px;clear:both;cursor:pointer;font-weight:bold;font-size:12px;display:none;}
+.login-connect{ margin-top:20px;font-size:11px;display:none;font-weight:bold;}
+.login-error{color:#DD4B39;font-size:13px;line-height:17px; display:none;}
+.login-help{background:none repeat scroll 0 0 #DD4B39;border-radius:1em 1em 1em 1em;color:#FFFFFF;font-weight:bold;padding:0 5px;display:inline-block;}
+.description{line-height:20px; font-size:14px;padding:0px 28px;text-align:justify;}
+.footer{margin:0 auto;font-size:12px;color:gray;width:720px;}
+.inp-form{border:1px solid #ACACAC;color:#393939;border-radius:5px;padding: 6px 6px 5px 10px;width:150px;font-size:12px;}
+.inp-form-error{border:1px solid red;color:#393939;height:16px;border-radius:5px;padding: 6px 6px 5px 10px;font-size:12px;}
+.txtarea{border:1px solid #ACACAC;color:#393939;border-radius:5px;padding:10px 6px 5px 15px;font-size:14px;}
+input[type="text"]:focus, input[type="text"]:hover, input[type="password"]:focus, input[type="password"]:hover, textarea:focus, textarea:hover, select:focus, select:hover{box-shadow:0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px #1D61A4;border:1px solid #1D61A4;}
+.main-form-table{font-size:13px;}
+.main-form-table tr{height:35px;}
+.main-form-table td{padding-left:25px;}
+.main-form-table2{border-collapse:collapse;border-spacing:0;}
+.main-form-table2 tr{height:27px;}
+.main-form-table2 tr:hover{background-color:#E3E3E3;}
+.main-form-table3{border-collapse:collapse;border-spacing:0;}
+.main-form-table3 th{background-color:#DDDDDD;color:#4E4D4D;font-size:15px;}
+.main-form-table3 tr{height:35px;}
+.main-form-table3 tr:hover{background-color:#E3E3E3;}
+.main-form-table4{border-collapse:collapse;border-spacing:0;}
+.main-form-table4 tr{height:30px;}
+#link:hover{background-color:#E3E3E3;text-decoration:underline;cursor:pointer;}
+.even-row{background-color:	#F0F0F0;}
+.msg-table{width:100%;border-spacing:0;}
+#message-green{margin-bottom: 5px;}
+.green-left{background: url("../images/message_green.gif") top left no-repeat;color: #6da827;font-family:Tahoma;font-weight: bold;line-height: 12px;padding: 0 0 0 20px;}
+.green-left a{color: #6da827;font-family:Tahoma;font-weight:normal;text-decoration:underline;}
+.green-right a{cursor:pointer;}
+.green-right{width:55px;}
+#message-red{margin-bottom:5px;}
+.red-left{background: url("../images/message_red.gif") top left no-repeat;color: #ce2700;font-family:Tahoma;font-weight:bold;padding: 0 0 0 20px;}
+.red-left a{color: #ce2700;font-family:Tahoma;font-weight:normal;text-decoration:underline;}
+.red-right a{cursor:pointer;}
+.red-right{width: 55px;}
+.dropdown{color:rgb(102, 102, 102);font-family:Trebuchet MS;border:1px solid #ACACAC;cursor: pointer;font-size:12px;width:165px;height:32px;padding:5px;border-radius:5px;}
+.dropdown-error{color:rgb(102, 102, 102);font-family:Trebuchet MS;border:1px solid red;cursor: pointer;font-size:12px;height:32px;padding:5px;border-radius:5px;}
+.block-ui-popup{font-size: 15px;font-weight: bold;}
+.bigHeading{font-size:24px;font-family:OpenSansLight;text-align:center;padding-top:15px;}
+.mainMenu{margin:0 auto;width:900px;}
